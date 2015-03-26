@@ -1,0 +1,14 @@
+<h1>Add a new client</h1>
+
+<%= simple_form_for @client do |f| %>
+  <div class="row">
+    <div class="col-sm-6"><%= f.input :first_name, placeholder: 'First Name', label: false %></div>
+    <div class="col-sm-6"><%= f.input :last_name, placeholder: 'Last name', label: false %></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8"><%= f.input :email, placeholder: 'Email', label: false %></div>
+    <div class="col-sm-4"><%= f.input :phone, placeholder: 'Phone Number', label: false %></div>
+  </div>
+  <%= f.input :address, placeholder: 'Address', label: false %>
+  <%= f.button :submit, 'Add Client' %>
+<% end %>

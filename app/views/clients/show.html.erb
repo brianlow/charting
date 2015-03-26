@@ -1,0 +1,4 @@
+<h1><%=@client.first_name%> <%=@client.last_name%></h1>
+<div class="row"><div class="col-sm-12"><a href="mailto:<%= @client.email %>"><%= @client.email %></a></div></div>
+<div class="row"><div class="col-sm-12"><%= number_to_phone(@client.phone) %></div></div>
+<div class="row"><div class="col-sm-12"><%= @client.address %></div></div>
