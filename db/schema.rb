@@ -14,13 +14,14 @@
 ActiveRecord::Schema.define(version: 20150326050545) do
 
   create_table "clients", force: :cascade do |t|
-    t.string   "first_name", null: false
-    t.string   "last_name",  null: false
+    t.string   "first_name",    null: false
+    t.string   "last_name",     null: false
     t.string   "address"
     t.string   "phone"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.date     "date_of_birth"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

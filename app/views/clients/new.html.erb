@@ -6,9 +6,10 @@
     <div class="col-sm-6"><%= f.input :last_name, placeholder: 'Last name', label: false %></div>
   </div>
   <div class="row">
-    <div class="col-sm-8"><%= f.input :email, placeholder: 'Email', label: false %></div>
-    <div class="col-sm-4"><%= f.input :phone, placeholder: 'Phone Number', label: false %></div>
+    <div class="col-sm-7"><%= f.input :email, placeholder: 'Email', label: false %></div>
+    <div class="col-sm-3"><%= f.input :phone, placeholder: 'Phone Number', label: false %></div>
+    <div class="col-sm-2"><%= f.input :date_of_birth, placeholder: 'Date of Birth', label: false, as: :string, input_html: { 'data-provide' => 'datepicker', 'data-date-format' => "yyyy-mm-dd" } %></div>
   </div>
-  <%= f.input :address, placeholder: 'Address', label: false %>
+  <%= f.input :address, placeholder: 'Address', label: false, as: :text %>
   <%= f.button :submit, 'Add Client' %>
 <% end %>

@@ -7,7 +7,7 @@
     <th>Last Name</th>
     <th>Email</th>
     <th>Phone</th>
-    <th>Phone</th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -15,8 +15,8 @@
     <tr>
       <td><%= client.first_name %></td>
       <td><%= client.last_name %></td>
-      <td><%= client.email %></td>
-      <td><%= client.phone %></td>
+      <td><a href="mailto:<%= client.email %>"><%= client.email %></td>
+      <td><%= number_to_phone(client.phone) %></td>
       <td><a href="<%= client_path(client.id) %>">View</a></td>
     </tr>
   <% end %>

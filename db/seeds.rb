@@ -8,6 +8,6 @@
 
 if Rails.env.development?
   Client.create!(first_name: 'Frances', last_name: 'Underwood', email: 'francis@nil.com', phone: '5031234564')
-  Client.create!(first_name: 'Claire', last_name: 'Underwood', email: 'claire@nil.com', phone: '5031234564')
+  Client.create!(first_name: 'Claire', last_name: 'Underwood', email: 'claire@nil.com', phone: '5031234564', date_of_birth: Date.new(1970, 5, 21))
   Client.create!(first_name: 'Doug', last_name: 'Stamper', email: 'doug.st@nil.com')
 end

@@ -6,6 +6,7 @@ class AddClient < ActiveRecord::Migration
       t.string :address, null: true
       t.string :phone, null: true
       t.string :email, null: true
+      t.date :date_of_birth, null: true
       t.timestamps null: false
     end
   end

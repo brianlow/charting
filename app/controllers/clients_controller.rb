@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(params[:client].permit(:first_name, :last_name, :email, :phone, :address))
+    @client = Client.new(params[:client].permit(:first_name, :last_name, :email, :phone, :address, :date_of_birth))
     if @client.save
       redirect_to @client
     else
