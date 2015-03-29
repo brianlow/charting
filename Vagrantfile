@@ -67,14 +67,36 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+
+    # postgres
+
+    # add postgres package repo so we can install latest version
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+    sudo apt-get install wget ca-certificates
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     sudo apt-get update
+    
+    # postgres locale set based on system at installation time
+    LANG=en_US.utf8 
+    LC_ALL="en_US.utf8"
+    sudo update-locale LANG=en_US.utf8 LC_ALL="en_US.utf8" 
+
+    # install postgres, # libpq-dev needed for pg gem
+    sudo apt-get install -y postgresql-9.4 libpq-dev 
+    sudo -u postgres createuser --superuser $USER
+    createdb
+
+
+    # ruby
+
+    # nodejs needed for a core ruby gem
     sudo apt-get install -y curl git nodejs
 
+    # do not download ri docs for gems
     echo "---" > .gemrc
     echo "gem: --no-ri --no-rdoc" >> .gemrc
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     \\curl -sSL https://get.rvm.io | bash -s stable --rails
     
-    #gem install bundler
    SHELL
 end
