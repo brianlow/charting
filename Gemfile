@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -52,3 +53,6 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :production do
+  rails_12factor    # optimize for Heroku
+end
