@@ -44,13 +44,9 @@ Vagrant.configure(2) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:f
-  #   vb.memory = "1024"
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"] # so guest networking still works after host suspend
+    vb.memory = "1024"
+    vb.cpus = "4"
   end
   #
   # View the documentation for the provider you are using for more

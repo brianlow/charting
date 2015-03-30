@@ -39,6 +39,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.logger = ActiveSupport::Logger.new(nil)
   config.lograge.enabled = true
   config.web_console.whitelisted_ips = '10.0.0.0/16'
 end
