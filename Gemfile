@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'lograge'
 gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
+gem 'ransack'  # quasi-full text search
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

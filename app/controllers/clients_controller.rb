@@ -22,7 +22,7 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @clients = Client.all
+    @clients = @q.result
   end
 
   def show
